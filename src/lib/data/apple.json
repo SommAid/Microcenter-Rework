@@ -1,0 +1,139 @@
+[
+  {
+    "id": 0,
+    "name": "MacBook Air 13\" M2",
+    "color": "bg-blue-200",
+    "textColor": "text-blue-900",
+    "tags": {
+      "Category": "Laptop",
+      "Brand" : "Apple",
+      "Rating": "5 Stars",
+      "Screen Size": "13\" to 13.9\"",
+      "CPU Brand": "Apple",
+      "Storage": "128GB",
+      "Color": "White",
+      "Memory": "8GB",
+      "Refresh Rate": "120Hz",
+      "GPU Type": "Apple M2",
+      "Ports": ["USB-C", "HDMI", "Lightening", "USB-A"],
+      "Webcam": "Yes"
+    }
+  },
+  {
+    "id": 1,
+    "name": "MacBook Air 13\" M2",
+    "color": "bg-blue-200",
+    "textColor": "text-blue-900",
+    "tags": {
+      "Brand": "Apple",
+      "Model": "MacBook Air",
+      "Screen Size": "13\" - 13.9\"",
+      "CPU": "Apple M2 Chip",
+      "Ports": ["Thunderbolt 3 x2"]
+    }
+  },
+  {
+    "id": 2,
+    "name": "MacBook Pro 16\" M2 Pro",
+    "color": "bg-gray-800",
+    "textColor": "text-white",
+    "tags": {
+      "Brand": "Apple",
+      "Model": "MacBook Pro",
+      "Screen Size": "16\" and Greater",
+      "CPU": "Apple M2 Pro Chip",
+      "Ports": ["Thunderbolt 4 x3", "HDMI x1"]
+    }
+  },
+  {
+    "id": 3,
+    "name": "MacBook Air 15\" M2",
+    "color": "bg-green-200",
+    "textColor": "text-green-900",
+    "tags": {
+      "Brand": "Apple",
+      "Model": "MacBook Air",
+      "Screen Size": "15\" - 15.9\"",
+      "CPU": "Apple M2 Chip",
+      "Ports": ["Thunderbolt 3 x2"]
+    }
+  },
+  {
+    "id": 4,
+    "name": "MacBook Pro 13\" M1",
+    "color": "bg-gray-200",
+    "textColor": "text-gray-900",
+    "tags": {
+      "Brand": "Apple",
+      "Model": "MacBook Pro",
+      "Screen Size": "13\" - 13.9\"",
+      "CPU": "Apple M1 Chip",
+      "Ports": ["Thunderbolt 3 x2"]
+    }
+  },
+  {
+    "id": 5,
+    "name": "MacBook Pro 16\" M1 Pro",
+    "color": "bg-gray-800",
+    "textColor": "text-white",
+    "tags": {
+      "Brand": "Apple",
+      "Model": "MacBook Pro",
+      "Screen Size": "16\" and Greater",
+      "CPU": "Apple M1 Pro Chip",
+      "Ports": ["Thunderbolt 4 x3", "HDMI x1"]
+    }
+  },
+  {
+    "id": 6,
+    "name": "MacBook Air 13\" M1",
+    "color": "bg-blue-200",
+    "textColor": "text-blue-900",
+    "tags": {
+      "Brand": "Apple",
+      "Model": "MacBook Air",
+      "Screen Size": "13\" - 13.9\"",
+      "CPU": "Apple M1 Chip",
+      "Ports": ["Thunderbolt 3 x2"]
+    }
+  },
+  {
+    "id": 7,
+    "name": "MacBook Pro 13\" M2",
+    "color": "bg-gray-200",
+    "textColor": "text-gray-900",
+    "tags": {
+      "Brand": "Apple",
+      "Model": "MacBook Pro",
+      "Screen Size": "13\" - 13.9\"",
+      "CPU": "Apple M2 Chip",
+      "Ports": ["Thunderbolt 3 x2"]
+    }
+  },
+  {
+    "id": 8,
+    "name": "MacBook Pro 16\" M2 Max",
+    "color": "bg-gray-900",
+    "textColor": "text-white",
+    "tags": {
+      "Brand": "Apple",
+      "Model": "MacBook Pro",
+      "Screen Size": "16\" and Greater",
+      "CPU": "Apple M2 Pro Chip",
+      "Ports": ["Thunderbolt 4 x3", "HDMI x1"]
+    }
+  },
+  {
+    "id": 9,
+    "name": "MacBook Air 15\" M2 (Base)",
+    "color": "bg-green-200",
+    "textColor": "text-green-900",
+    "tags": {
+      "Brand": "Apple",
+      "Model": "MacBook Air",
+      "Screen Size": "15\" - 15.9\"",
+      "CPU": "Apple M2 Chip",
+      "Ports": ["Thunderbolt 3 x2"]
+    }
+  }
+]

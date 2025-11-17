@@ -1,6 +1,4 @@
 <script>
-    import Header from "$lib/components/header.svelte";
-    import Footer from "$lib/components/footer.svelte";
 
     const categories = [
     { name: 'Computer Parts', img: 'https://www.google.com/search?q=https://placehold.co/100x100/e2e8f0/333%3Ftext%3DParts' },
@@ -32,7 +30,6 @@
 
     
     <div class="min-h-screen bg-gray-100 font-sans text-gray-900">
-    <Header/>
     
     <!-- NAVIGATION BAR -->
     
@@ -41,7 +38,7 @@
     <ul class="flex items-center justify-center gap-8">
     <li><a href="#" class="py-3 px-2 block font-medium hover:bg-gray-700 rounded-md">PC Parts</a></li>
     <li><a href="#" class="py-3 px-2 block font-medium hover:bg-gray-700 rounded-md">Computers</a></li>
-    <li><a href="#" class="py-3 px-2 block font-medium hover:bg-gray-700 rounded-md">Apple</a></li>
+    <li><a href="/apple" class="py-3 px-2 block font-medium hover:bg-gray-700 rounded-md">Apple</a></li>
     <li><a href="#" class="py-3 px-2 block font-medium hover:bg-gray-700 rounded-md">Gaming</a></li>
     <li><a href="#" class="py-3 px-2 block font-medium hover:bg-gray-700 rounded-md">Electronics</a></li>
     <li><a href="#" class="py-3 px-2 block font-medium hover:bg-gray-700 rounded-md">Networking</a></li>
@@ -127,5 +124,4 @@
       </div>
     </section>
     </main>
-    <Footer />
 </div>
