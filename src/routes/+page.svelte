@@ -68,7 +68,7 @@
             <h2 class="text-2xl font-bold mb-6">Shop All Categories</h2>
             <div class="grid grid-cols-4 md:grid-cols-8 gap-4">
                 {#each categories as category}
-                    <a href="#" class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow text-center">
+                    <a href="/{category.name.toLocaleLowerCase()}" class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow text-center">
                         <img src={category.img} alt={category.name} class="w-20 h-20 object-contain mb-2">
                         <span class="text-sm font-semibold">{category.name}</span>
                     </a>
