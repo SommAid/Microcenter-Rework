@@ -22,7 +22,7 @@
   }
 </style>
 
-<aside class="w-64 bg-white p-4 border-r border-gray-200 space-y-4">
+<aside class="rounded-xl w-64 bg-white p-4 border-r border-gray-200 space-y-4">
     
     <!-- Price Range (Slider placeholder) -->
     <div>

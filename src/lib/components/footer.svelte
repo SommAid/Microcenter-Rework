@@ -43,7 +43,7 @@
           <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
         </ul>
       </div>
-      <!-- Column 5 & 6: Social/Newsletter -->
+      <!-- Social/Newsletter -->
       <div class="col-span-2">
         <h5 class="font-bold text-white mb-4">Stay Connected</h5>
         <p class="text-sm mb-4">Get the latest deals and more.</p>
@@ -51,18 +51,13 @@
       </div>
     </div>
 
-    <!-- 3. Right Side: Icons & Links -->
+    <!-- Icons & Links -->
     <div class="flex items-center space-x-6 border-t border-gray-700 pt-8">
       <img src={MCLogo} alt="Microcenter Logo" class="h-12 w-auto">
       <div class="grow text-center text-sm text-gray-500">
             &copy; {new Date().getFullYear()} MicroCenter. All rights reserved.
       </div>
     </div>
-
-    
-      
-
-    
   </div>
 </footer>    
     
