@@ -1,10 +1,10 @@
 <script>
-    // 1. Import your SVG image. This works inside a .svelte file.
+    // Imports SVG images
     import MCLogo from '$lib/assets/MCLogo.svg';
     import ShopeImg from '$lib/assets/storeWHITE.svg'
     import UserImg from '$lib/assets/UWhite.svg'
 
-    // 2. Import the cart total from our store
+    // Imports the cart total from our store
     import { cartTotalQuantity } from '$lib/store.js';
 </script>
 
@@ -32,12 +32,12 @@
     <div class="container mx-auto max-w-7xl">
         <nav class="flex items-center justify-between space-x-6">
 
-            <!-- 1. Far Left: Logo -->
+            <!-- Far Left: Logo -->
             <a href="/" class="flex items-center space-x-2">
                 <img src={MCLogo} alt="Microcenter Logo" class="h-12 w-auto">
             </a>
 
-            <!-- 2. Center: Search Bar -->
+            <!-- Center: Search Bar -->
             <div class="relative flex-grow">
                 <input 
                     type="search" 
@@ -50,7 +50,7 @@
                 </div>
             </div>
 
-            <!-- 3. Right Side: Icons & Links -->
+            <!-- Right Side: Icons & Links -->
             <div class="flex items-center space-x-6">
             
                 <!-- Store Hours  -->
@@ -72,9 +72,7 @@
 
                 <!-- Cart -->
                 <a href="#" class="relative flex items-center space-x-2 text-gray-300 hover:text-red-600">
-                    <!-- Cart Icon  -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart w-7 h-7 flex-shrink-0"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-                    <!-- Cart count badge -->
                     <span class="cart-badge">
                         {$cartTotalQuantity}
                     </span>

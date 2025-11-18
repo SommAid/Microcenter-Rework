@@ -1,7 +1,7 @@
 import { writable, derived } from 'svelte/store';
 import { browser } from '$app/environment';
 
-// --- Helper function for persisting stores ---
+// Helper function for persisting stores 
 function createPersistentStore(key, initialValue) {
     let initialData = initialValue;
     
@@ -28,7 +28,6 @@ function createPersistentStore(key, initialValue) {
     return store;
 }
 
-// --- Recently Viewed Store ---
 const MAX_RECENTLY_VIEWED = 6;
 export const recentlyViewedStore = createPersistentStore('recentlyViewed', []);
 
@@ -40,14 +39,13 @@ export function addToRecentlyViewed(item) {
     });
 }
 
-// Read-only export for subscribing
 export const recentlyViewed = derived(recentlyViewedStore, $store => $store);
 
 
-// --- Shopping Cart Store ---
+// Shopping Cart Store 
 export const cart = createPersistentStore('cart', []);
 
-// Function to add an item (or increase quantity)
+// Function to add an item 
 export function addToCart(item) {
     cart.update(items => {
         const existingItem = items.find(i => i.name === item.name);
@@ -73,7 +71,7 @@ export function increaseQuantity(item) {
     );
 }
 
-// Function to decrease quantity (and remove at 0)
+// Function to decrease quantity
 export function decreaseQuantity(item) {
     cart.update(items => {
         const existingItem = items.find(i => i.name === item.name);

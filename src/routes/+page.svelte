@@ -1,17 +1,18 @@
 <script>
-    // Note: This component assumes $lib/assets/black-friday.png exists
-    // and $lib/store.js provides the required stores and functions.
-    // Since I cannot access local files, I'll replace the local image
-    // with a placeholder for demonstration.
-    
-    import BlackFridayImg from '$lib/assets/black-friday.png'
+    // Image imports for items in stock
+    import BlackFridayImg from '$lib/assets/black-friday.png' 
+    import InlandSSD from '$lib/assets/inland.jpg'
+    import RyzenCPU from '$lib/assets/ryzen.png'
+    import PowerSpec from '$lib/assets/powerspec_pc.jpg'
+    import Inteli9 from '$lib/assets/inteli9.jpg'
 
-    // Mock store for demonstration, as we can't import $lib/store.js
-    // In a real Svelte app, you would remove this mock.
-    // const { writable } = globalThis.svelte?.store || { writable: (val) => ({ subscribe: (fn) => { fn(val); return () => {}; }, set: () => {}, update: () => {} }) };
-    
-    // const recentlyViewed = writable([]);
-    // const cart = writable([]);
+    import GamingLaptop from '$lib/assets/gaming_laptop.jpg'
+    import Monitor from '$lib/assets/4k_monitor.jpg'
+    import Motherboard from '$lib/assets/motherboard.png'
+    import RTX4070 from '$lib/assets/rtx4070.png'
+    import Mouse from '$lib/assets/wireless_mouse.png'
+    import SteamFrame from '$lib/assets/steam-frame.jpg'
+
     
     import { 
         recentlyViewed, 
@@ -22,42 +23,7 @@
         decreaseQuantity 
     } from '$lib/store.js';
 
-    /*
-    function addToRecentlyViewed(item) {
-        recentlyViewed.update(items => {
-            const newItems = [item, ...items.filter(i => i.name !== item.name)];
-            return newItems.slice(0, 6); // Keep only 6 recent
-        });
-    }
-
-    function addToCart(item) {
-        cart.update(items => {
-            const existingItem = items.find(i => i.name === item.name);
-            if (existingItem) {
-                return items.map(i => i.name === item.name ? { ...i, quantity: i.quantity + 1 } : i);
-            }
-            return [...items, { ...item, quantity: 1 }];
-        });
-    }
-
-    function increaseQuantity(item) {
-        cart.update(items => 
-            items.map(i => i.name === item.name ? { ...i, quantity: i.quantity + 1 } : i)
-        );
-    }
-
-    function decreaseQuantity(item) {
-        cart.update(items => {
-            const existingItem = items.find(i => i.name === item.name);
-            if (existingItem && existingItem.quantity > 1) {
-                return items.map(i => i.name === item.name ? { ...i, quantity: i.quantity - 1 } : i);
-            }
-            return items.filter(i => i.name !== item.name); // Remove if quantity would be 0
-        });
-    }
-    // End of mock store
-    */
-
+    // Sets the banner for deals / other future additions
     const heroBanners = [
         { src: BlackFridayImg, alt: 'Black Friday Deals' },
         { src: 'https://placehold.co/1200x400/6366f1/ffffff?text=Cyber+Monday', alt: 'Cyber Monday Deals' },
@@ -75,14 +41,15 @@
         currentImageIndex = (currentImageIndex - 1 + heroBanners.length) % heroBanners.length;
     }
     
-    // Reactive declaration to create a map of cart items for quick lookup
+    // Creates a map of cart items for quick lookup
     $: cartMap = $cart.reduce((acc, item) => {
         acc[item.name] = item;
         return acc;
     }, {});
 
+    // Temporary JSON-like data for items in stock
     const categories = [
-        { name: 'Computer Parts', img: 'https://placehold.co/100x100/e2e8f0/333?text=Parts' },
+        { name: 'Computer Parts'  },
         { name: 'Computers', img: 'https://placehold.co/100x100/e2e8f0/333?text=Computers' },
         { name: 'Apple', img: 'https://placehold.co/100x100/e2e8f0/333?text=Apple' },
         { name: 'Electronics', img: 'https://placehold.co/100x100/e2e8f0/333?text=Electronics' },
@@ -93,35 +60,27 @@
     ];
     
     const hotDeals = [
-        { name: 'Inland SSD', originalPrice: '$69.99', price: '$49.99', img: 'https://placehold.co/150x150/fef2f2/b91c1c?text=Hot+Deal' },
-        { name: 'AMD Ryzen CPU', originalPrice: '$349.99', price: '$299.99', img: 'https://placehold.co/150x150/fef2f2/b91c1c?text=Hot+Deal' },
-        { name: 'PowerSpec PC', originalPrice: '$1499.99', price: '$1299.99', img: 'https://placehold.co/150x150/fef2f2/b91c1c?text=Hot+Deal' },
-        { name: 'Intel Core i9', originalPrice: '$599.99', price: '$549.99', img: 'https://placehold.co/150x150/fef2f2/b91c1c?text=Hot+Deal' },
+        { name: 'Inland SSD', originalPrice: '$69.99', price: '$49.99', img: InlandSSD },
+        { name: 'AMD Ryzen CPU', originalPrice: '$349.99', price: '$299.99', img: RyzenCPU },
+        { name: 'PowerSpec PC', originalPrice: '$1499.99', price: '$1299.99', img: PowerSpec },
+        { name: 'Intel Core i9', originalPrice: '$599.99', price: '$549.99', img: Inteli9 },
     ];
     
     const topDeals = [
-        { name: 'Gaming Laptop', price: '$999.99', img: 'https://placehold.co/200x200/e0f2fe/0891b2?text=Top+Deal' },
-        { name: '4K Monitor', price: '$349.99', img: 'https://placehold.co/200x200/e0f2fe/0891b2?text=Top+Deal' },
-        { name: 'Motherboard', price: '$179.99', img: 'https://placehold.co/200x200/e0f2fe/0891b2?text=Top+Deal' },
-        { name: 'RTX 4070', price: '$599.99', img: 'https://placehold.co/200x200/e0f2fe/0891b2?text=Top+Deal' },
-        { name: 'Wireless Mouse', price: '$79.99', img: 'https://placehold.co/200x200/e0f2fe/0891b2?text=Top+Deal' },
-        { name: 'VR Headset', price: '$499.99', img: 'https://placehold.co/200x200/e0f2fe/0891b2?text=Top+Deal' },
+        { name: 'Gaming Laptop', price: '$999.99', img: GamingLaptop },
+        { name: '4K Monitor', price: '$349.99', img: Monitor },
+        { name: 'Motherboard', price: '$179.99', img: Motherboard },
+        { name: 'RTX 4070', price: '$599.99', img: RTX4070 },
+        { name: 'Wireless Mouse', price: '$79.99', img: Mouse },
+        { name: 'VR Headset', price: '$499.99', img: SteamFrame },
     ];
 
-    // Svelte store subscription for reactive updates
-    /*
-    let recentlyViewedItems = [];
-    recentlyViewed.subscribe(value => {
-        recentlyViewedItems = value;
-    });
-    */
 </script>
     
 <div class="min-h-screen bg-gray-100 font-sans text-gray-900">
-    
     <main class="container mx-auto px-4 py-8 space-y-12">
     
-        <!-- Hero Image Carousel -->
+        <!-- Image Carousel -->
         <div class="pt-5 rounded-lg shadow-lg flex items-center justify-center relative group overflow-hidden">
             <img src={currentImage.src} alt={currentImage.alt} class="w-full h-full max-h-69 object-cover rounded-lg transition-transform duration-500 ease-in-out">
             <!-- Previous Button -->
@@ -154,7 +113,7 @@
                 {#each categories as category}
                     <a href="/{category.name.toLocaleLowerCase()}" 
                        class="flex items-center justify-center p-2 aspect-square 
-                              bg-gray-300 rounded-lg shadow-md 
+                              bg-white rounded-lg shadow-md 
                               hover:shadow-xl hover:bg-red-400
                               transition-all text-center">
                         
@@ -181,8 +140,6 @@
                                 <p class="text-lg font-bold text-red-600">{deal.price}</p>
                             </div>
 
-                            <!-- ***** FIX ***** -->
-                            <!-- Changed opacity-0 to opacity-10 -->
                             <div class="absolute inset-0 flex items-center justify-center
                                         bg-black bg-opacity-30 text-white text-lg font-semibold
                                         opacity-0 group-hover:opacity-50 transition-opacity duration-300">
@@ -237,8 +194,7 @@
                                 <p class="text-lg font-bold text-blue-600 mt-2">{deal.price}</p>
                             </div>
 
-                            <!-- ***** FIX ***** -->
-                            <!-- Changed opacity-0 to opacity-10 -->
+
                             <div class="absolute inset-0 flex items-center justify-center
                                         bg-black bg-opacity-30 text-white text-lg font-semibold
                                         opacity-0 group-hover:opacity-50 transition-opacity duration-300">
