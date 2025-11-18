@@ -2,6 +2,7 @@
     // Import the Sidebar component
     import Sidebar from '$lib/components/Sidebar.svelte';
     import { onMount } from 'svelte';
+    import Computer from '$lib/assets/laptop.png'
     
     // Import the store
     import { filterGroups } from '$lib/stores.js';
@@ -255,13 +256,15 @@
                     <!-- Product Card -->
                     <div class="relative group border border-gray-200 rounded-lg shadow bg-white overflow-hidden transition-all duration-300 hover:shadow-xl">
                         
-                        <div class="{product.color} {product.textColor} h-48 w-full flex items-center justify-center p-4 relative rounded-t-lg">
-                            
+                        <div class="bg-gray-200 h-64 w-full flex items-center justify-center p-4 relative rounded-t-lg">
+                            <img src={Computer} alt="{product.name}" class="absolute inset-0 w-full h-full object-cover z-0 rounded-t-lg">
+                            <div class="absolute inset-0 bg-black/30 z-5 rounded-t-lg"></div>
+                            <h3 class="text-xl font-semibold relative z-10 text-white">{product.name}</h3>
                             <a href="/apple/products"
-                                class="absolute inset-0 bg-black/75 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-t-lg">
+                               class="absolute inset-0 z-20 bg-black/75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-lg">
                                 <span class="text-white text-lg font-bold">See Details</span>
                             </a>
-                            <h3 class="text-xl font-semibold">{product.name}</h3>
+
                         </div>
                         
                         <div class="p-4 flex flex-col items-center">

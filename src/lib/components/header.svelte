@@ -64,7 +64,7 @@
 
                 <!-- Profile / Sign In  -->
                 <a href="#" class="flex items-center space-x-2 text-gray-300 hover:text-red-600">
-                     <img src={UserImg} alt="User Icon" class="h-6 w-auto">
+                    <img src={UserImg} alt="User Icon" class="h-6 w-auto">
                     <div class="flex flex-col text-sm leading-tight">
                         <span class="font-semibold">Sign In</span>
                     </div>

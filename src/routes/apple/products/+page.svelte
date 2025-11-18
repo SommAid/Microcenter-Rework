@@ -1,3 +1,7 @@
+<script>
+    import Computer from "$lib/assets/laptop.png"
+</script>
+
 <!-- 
   This flex container holds the main content 
 -->
@@ -29,10 +33,7 @@
             <div class="mb-6 bg-white rounded-lg shadow-md overflow-hidden">
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-1/3">
-                        <!-- You can replace this div with an <img> tag -->
-                        <div class="h-64 md:h-full w-full bg-gray-200 flex items-center justify-center">
-                            <span class="text-gray-500">Image Placeholder</span>
-                        </div>
+                        <img src={Computer} alt="Sample Image" class="h-64 md:h-full w-full bg-gray-200 flex items-center justify-center">
                     </div>
                     
                     <!-- Product Details -->
