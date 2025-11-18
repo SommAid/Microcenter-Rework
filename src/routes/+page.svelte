@@ -4,8 +4,7 @@
     // Since I cannot access local files, I'll replace the local image
     // with a placeholder for demonstration.
     
-    import BlackFridayImg from '$lib/assets/black-friday.png' 
-    // const BlackFridayImg = 'https://placehold.co/1200x400/111827/ffffff?text=Black+Friday+Deals'
+    import BlackFridayImg from '$lib/assets/black-friday.png'
 
     // Mock store for demonstration, as we can't import $lib/store.js
     // In a real Svelte app, you would remove this mock.
@@ -124,7 +123,7 @@
     
         <!-- Hero Image Carousel -->
         <div class="pt-5 rounded-lg shadow-lg flex items-center justify-center relative group overflow-hidden">
-            <img src={currentImage.src} alt={currentImage.alt} class="w-full h-[400px] object-cover rounded-lg transition-transform duration-500 ease-in-out">
+            <img src={currentImage.src} alt={currentImage.alt} class="w-full h-full max-h-69 object-cover rounded-lg transition-transform duration-500 ease-in-out">
             <!-- Previous Button -->
             <button 
                 on:click={prevImage} 
@@ -153,9 +152,13 @@
             <h2 class="text-2xl font-bold mb-6">Shop All Categories</h2>
             <div class="grid grid-cols-4 md:grid-cols-8 gap-4">
                 {#each categories as category}
-                    <a href="/{category.name.toLocaleLowerCase()}" class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow text-center">
-                        <img src={category.img} alt={category.name} class="w-20 h-20 object-contain mb-2">
-                        <span class="text-sm font-semibold">{category.name}</span>
+                    <a href="/{category.name.toLocaleLowerCase()}" 
+                       class="flex items-center justify-center p-2 aspect-square 
+                              bg-gray-300 rounded-lg shadow-md 
+                              hover:shadow-xl hover:bg-red-400
+                              transition-all text-center">
+                        
+                        <span class="font-semibold text-xl text-black">{category.name}</span>
                     </a>
                 {/each}
             </div>
@@ -220,7 +223,7 @@
     
         <!-- Top Deals Section -->
         <section>
-            <h2 class="text-2xl font-bold mb-6">Top Deals</h2>
+            <h2 class="text-2xl font-bold mb-6">New Products</h2>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                 {#each topDeals as deal}
                 {@const cartItem = cartMap[deal.name]}
